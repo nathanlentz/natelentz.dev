@@ -1,0 +1,28 @@
+$primary: #4a4a4a;
+$accent: #78c4a1;
+
+body {
+  background-color: #f7f7f7;
+  margin: 0;
+  color: $primary;
+  font-family: "cabin";
+}
+
+.main {
+  margin: 65px 0;
+}
+
+.content {
+  max-width: 960px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+a:visited {
+  color: $primary;
+}
+
+.randomColors {
+  --lightBtn: #FFBD07;
+  --lightBg: #232323;
+}

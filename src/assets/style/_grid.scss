@@ -1,0 +1,39 @@
+.columns {
+    display: flex;
+    margin-bottom: 20px;
+  }
+  
+  .column {
+    display: block;
+    flex-basis: 0;
+    flex-grow: 1;
+    flex-shrink: 1;
+    padding: 0.75rem;
+  }
+  
+  @media screen and (min-width: 769px) {
+    .column.twenty {
+      flex: none;
+      width: 20%;
+    }
+  
+    .column.forty {
+      flex: none;
+      width: 40%;
+    }
+  
+    .column.sixty {
+      flex: none;
+      width: 60%;
+    }
+  
+    .column.eighty {
+      flex: none;
+      width: 80%;
+    }
+  
+    .column.hundred {
+      flex: none;
+      width: 100%;
+    }
+  }

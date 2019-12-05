@@ -1,0 +1,21 @@
+{
+  "name": "natelentz.dev",
+  "private": true,
+  "scripts": {
+    "build": "gridsome build",
+    "develop": "gridsome develop",
+    "explore": "gridsome explore"
+  },
+  "dependencies": {
+    "@gridsome/plugin-google-analytics": "^0.1.0",
+    "@gridsome/remark-prismjs": "^0.3.0",
+    "gridsome": "^0.7.0",
+    "gridsome-source-cosmicjs": "^0.0.4",
+    "typeface-cabin": "^0.0.72",
+    "typeface-poppins": "^0.0.72"
+  },
+  "devDependencies": {
+    "node-sass": "^4.13.0",
+    "sass-loader": "^8.0.0"
+  }
+}
