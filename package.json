@@ -10,7 +10,7 @@
     "@gridsome/plugin-google-analytics": "^0.1.0",
     "@gridsome/remark-prismjs": "^0.3.0",
     "gridsome": "^0.7.0",
-    "gridsome-source-cosmicjs": "^0.0.4",
+    "gridsome-source-cosmicjs": "../gridsome-source-cosmicjs",
     "typeface-cabin": "^0.0.72",
     "typeface-poppins": "^0.0.72"
   },

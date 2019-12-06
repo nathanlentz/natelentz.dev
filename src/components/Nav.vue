@@ -41,29 +41,6 @@ export default {
     font-weight: bold;
     font-family: poppins;
     padding: 15px 15px;
-
-    a {
-      text-decoration: none;
-      position: relative;
-    }
-
-    a:after {
-      content: "";
-      position: absolute;
-      z-index: -1;
-      top: 100%;
-      left: -0.1em;
-      right: -0.1em;
-      bottom: 0;
-      transition: top 200ms cubic-bezier(0, .8, .13, 1);
-      background-color: rgba(79,192,141,0.5);
-    }
-    .router-link-exact-active:after {
-      top: 60%
-    }
-    .router-link-exact-active:hover:after, a:hover:after {
-      top: 0%;
-    }
   }
 }
 </style>

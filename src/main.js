@@ -4,10 +4,13 @@ import '~/assets/style/index.scss'
 require("typeface-cabin");
 require("typeface-poppins");
 
-import DefaultLayout from '~/layouts/Default.vue'
+import DefaultLayout from '~/layouts/Default.vue';
+
+import DateFilter from '~/filters/dateFilter.js';
 
 export default function (Vue, { router, head, isClient }) {
-  head.htmlAttrs = { lang: 'en' }
+  head.htmlAttrs = { lang: 'en' };
 
-  Vue.component('Layout', DefaultLayout)
+  Vue.component('Layout', DefaultLayout);
+  Vue.filter('date', DateFilter);
 }

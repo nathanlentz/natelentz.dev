@@ -1,13 +1,14 @@
 <template>
   <Layout>
     <Hero title="Hi, I'm Nate." desc="I'm a developer from Grand Rapids, MI" />
+    <div class="title-label">Recent Posts</div>
     <div v-for="item in $page.posts.edges" :key="item.slug">
-      <h3>
-        <g-link :to="`posts/${item.node.slug}`">{{ item.node.title }}</g-link>
-      </h3>
-      <!-- <small>{{ item.node.createdAt }}</small> -->
-      <p>{{ item.node.metadata.description }}</p>
-      {{ item.node.metadata.content }}
+      <PostCard 
+        :title="item.node.title"
+        :description="item.node.metadata.description"
+        :slug="item.node.slug"
+        :publishDate="item.node.metadata.publish_date"
+      />
     </div>
   </Layout>
 </template>
@@ -20,6 +21,15 @@
           id
           slug
           title
+          metadata {
+            hero {
+              imgix_url
+            }
+            headline
+            content
+            description
+            publish_date
+          }
         }
       }
     } 
@@ -28,10 +38,12 @@
 
 <script>
 import Hero from "~/components/Hero.vue";
+import PostCard from "~/components/PostCard.vue";
 
 export default {
   components: {
-    Hero
+    Hero,
+    PostCard
   },
   metaInfo: {
     title: "Home"

@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <Nav :navItems="nav" />
-    <div class="main">
+    <div class="main content">
       <slot />
     </div>
     <Footer />
