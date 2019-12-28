@@ -39,6 +39,7 @@ export default {
   position: relative;
   z-index: 5;
   margin: 0 auto;
+  margin-top: 65px;
   display: flex;
   flex-direction: column;
   justify-content: center;

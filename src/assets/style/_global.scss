@@ -1,10 +1,13 @@
-$primary: #4a4a4a;
-$accent: #78c4a1;
+:root {
+  --primary: #4a4a4a;
+  --accent: #78c4a1;
+  --mustard: #FFBD07;
+}
 
 body {
   background-color: #f7f7f7;
   margin: 0;
-  color: $primary;
+  color: --primary;
   font-family: "cabin";
   padding-bottom: 80px;
 }
@@ -48,7 +51,7 @@ a {
 }
 
 a, a:visited  {
-    color: $primary;
+    color: --primary;
 }
 
 .router-link-exact-active:after, a:after {
@@ -56,9 +59,4 @@ a, a:visited  {
 }
 .router-link-exact-active:hover:after, a:hover:after {
   top: 0%;
-}
-
-.randomColors {
-  --lightBtn: #FFBD07;
-  --lightBg: #232323;
 }

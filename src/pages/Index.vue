@@ -1,6 +1,6 @@
 <template>
   <Layout>
-    <Hero title="Hi, I'm Nate." desc="I'm a developer from Grand Rapids, MI" />
+    <Hero class="home-hero" :title="heroTitle" :desc="heroDescription" />
     <div class="title-label">Recent Posts</div>
     <div v-for="item in $page.posts.edges" :key="item.slug">
       <PostCard 
@@ -47,6 +47,12 @@ export default {
   },
   metaInfo: {
     title: "Home"
+  },
+  data() {
+    return {
+      heroTitle: "Hi, I'm Nate.",
+      heroDescription: "I'm a developer from Grand Rapids, MI."
+    }
   }
 };
 </script>
