@@ -14,16 +14,24 @@ module.exports = {
   siteName: 'Nate Lentz',
   plugins: [
     {
-      use: 'gridsome-source-cosmicjs',
+      use: '@gridsome/source-filesystem',
       options: {
-        bucketSlug: process.env.COSMIC_BUCKET_SLUG ,
-        objectTypes: [`posts`, `settings`],
-        apiAccess: {
-          read_key: process.env.COSMIC_READ_KEY || ''
-        }
-      },
+        baseDir: './blog',
+        typeName: 'BlogPost',
+        pathPrefix: '/posts',
+        path: '*.md',
+      }
     }
   ],
+
+  transformers: {
+    remark: {
+      plugins: [
+        '@gridsome/remark-prismjs'
+      ]
+    }
+  },
+  
   chainWebpack (config) {
     // Load variables for all vue-files
     const types = ['vue-modules', 'vue', 'normal-modules', 'normal']
@@ -32,5 +40,6 @@ module.exports = {
     types.forEach(type => {
       addStyleResource(config.module.rule('scss').oneOf(type))
     })
-	}
+  }
+  
 }

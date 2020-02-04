@@ -21,7 +21,7 @@ export default {
     return {
       nav: [
         { id: 1, title: "Home", route: "/" },
-        { id: 2, title: "Blog", route: "/blog" }
+        { id: 2, title: "Blog", route: "/posts" }
       ]
     }
   }
@@ -38,11 +38,6 @@ export default {
   p {
     font-family: "poppins";
     font-weight: bold;
-  }
-  a {
-    &:visited {
-      color: #4a4a4a;
-    }
   }
 }
 </style>

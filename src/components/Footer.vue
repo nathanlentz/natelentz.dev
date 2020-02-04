@@ -1,10 +1,6 @@
 <template>
   <footer>
     <div class="footer-flex-wrapper">
-      <div class="thanks-links">
-        Powered by <a href="https://gridsome.org/">Gridsome</a> and <a href="https://www.cosmicjs.com/">Cosmicjs</a>
-      </div>
-      <!-- <a href="https://cosmicjs.com/add-bucket?import_bucket=5dae570d87cc2f20885e6e55"><img src="https://cdn.cosmicjs.com/51fe54d0-4f6e-11e9-9f32-8d001da69630-powered-by-cosmicjs.svg" /></a> -->
       <div class="social">
         <a href="https://github.com/nathanlentz">
           <g-image src="~/assets/image/github.svg" alt="github" />
@@ -40,11 +36,7 @@ footer {
 .footer-flex-wrapper {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-}
-
-.thanks-links {
-  position: relative;
+  justify-content: flex-end;
 }
 
 .social {

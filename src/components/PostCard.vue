@@ -4,7 +4,7 @@
     <div class="post-card" >
       <div class="date">{{ publishDate }}</div>
       <div class="info">
-        <g-link :to="`posts/${slug}`" class="title"> {{ title }}</g-link>
+        <g-link :to="`${slug}`" class="title"> {{ title }}</g-link>
         <div class="description">{{ description }}</div>
           <div class="tags" v-for="(tag, index) in tags" :key="index">
             <div class="tag">tag</div>

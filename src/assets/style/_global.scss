@@ -2,12 +2,14 @@
   --primary: #4a4a4a;
   --accent: #78c4a1;
   --mustard: #FFBD07;
+  --inlineCode-bg: rgba(255, 229, 100, 0.2);
+  --inlineCode-text: #1a1a1a;
 }
 
 body {
   background-color: #f7f7f7;
   margin: 0;
-  color: --primary;
+  color: var(--primary);
   font-family: "cabin";
   padding-bottom: 80px;
 }
@@ -17,7 +19,7 @@ body {
 }
 
 .content {
-  max-width: 960px;
+  max-width: 720px;
   padding: 0 15px;
   margin: 0 auto;
 }
@@ -50,13 +52,150 @@ a {
   }
 }
 
-a, a:visited  {
-    color: --primary;
+a, #app a:visited  {
+    color: var(--primary);
 }
 
-.router-link-exact-active:after, a:after {
+.router-link-exact-active.active:after, a:after {
   top: 60%
 }
-.router-link-exact-active:hover:after, a:hover:after {
+.router-link-exact-active.active:hover:after, a:hover:after {
   top: 0%;
+}
+
+/**
+ * Based on copypasta from Remy Bach and Sarah Drasner via overreacted.io
+ */
+ code[class*='language-'],
+ pre[class*='language-'] {
+   color: white;
+   background: #2F333D;
+   border-radius: 10px;
+   font-family: Consolas, Menlo, Monaco, source-code-pro, Courier New, monospace;
+   font-feature-settings: normal;
+   text-align: left;
+   white-space: pre;
+   word-spacing: normal;
+   word-break: normal;
+   word-wrap: normal;
+   line-height: 1.5;
+   margin-bottom: 0;
+ 
+   -moz-tab-size: 4;
+   -o-tab-size: 4;
+   tab-size: 4;
+ 
+   -webkit-hyphens: none;
+   -moz-hyphens: none;
+   -ms-hyphens: none;
+   hyphens: none;
+ }
+
+/* Code blocks */
+pre[class*='language-'] {
+  overflow: auto;
+  padding: 1.3125rem;
+}
+
+pre[class*='language-']::-moz-selection {
+  /* Firefox */
+  background: hsl(207, 4%, 16%);
+}
+
+pre[class*='language-']::selection {
+  /* Safari */
+  background: hsl(207, 4%, 16%);
+}
+
+/* Text Selection colour */
+pre[class*='language-']::-moz-selection,
+pre[class*='language-'] ::-moz-selection {
+  text-shadow: none;
+  background: hsla(0, 0%, 100%, 0.15);
+}
+
+pre[class*='language-']::selection,
+pre[class*='language-'] ::selection {
+  text-shadow: none;
+  background: hsla(0, 0%, 100%, 0.15);
+}
+
+/* Inline code */
+:not(pre) > code[class*='language-'] {
+  border-radius: 0.3em;
+  background: var(--inlineCode-bg);
+  color: var(--inlineCode-text);
+  padding: 0.15em 0.2em 0.05em;
+  white-space: normal;
+}
+
+.token.comment {
+  color: rgb(128, 147, 147);
+}
+
+.token.variable {
+  color: rgb(214, 222, 235);
+}
+
+.token.builtin,
+.token.char,
+.token.constant,
+.token.function {
+  color: #98c379;
+}
+
+.token.punctuation {
+  color: white;
+}
+
+.token.parameter {
+  color: #62AFEF;
+}
+
+.token.selector,
+.token.doctype {
+  color: #696E7A;
+  font-style: 'italic';
+}
+
+.token.class-name {
+  color: #62AFEF;
+}
+
+.token.tag,
+.token.keyword {
+  color: #C9646D;
+}
+
+.language-js > .token.keyword {
+  color: #62AFEF;
+
+  &.module {
+    color: #C9646D;
+  }
+}
+
+.token.operator {
+  color:#C9646D;
+}
+
+.token.string {
+  color: #e5c07b;
+}
+
+.token.boolean {
+  color: rgb(255, 88, 116);
+}
+
+.token.property {
+  color: rgb(128, 203, 196);
+}
+
+.token.namespace {
+  color: rgb(178, 204, 214);
+}
+
+pre[data-line] {
+  padding: 1em 0 1em 3em;
+  position: relative;
 }

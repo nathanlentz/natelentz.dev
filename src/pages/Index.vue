@@ -2,37 +2,29 @@
   <Layout>
     <Hero class="home-hero" :title="heroTitle" :desc="heroDescription" />
     <div class="title-label">Recent Posts</div>
-    <div v-for="item in $page.posts.edges" :key="item.slug">
+    <div v-for="{ node } in $page.allBlogPost.edges" :key="node.path">
       <PostCard 
-        :title="item.node.title"
-        :description="item.node.metadata.description"
-        :slug="item.node.slug"
-        :publishDate="item.node.metadata.publish_date"
+        :title="node.title"
+        :description="node.spoiler"
+        :slug="node.path"
+        :publishDate="node.date"
       />
     </div>
   </Layout>
 </template>
 
 <page-query>
-  query IndexQuery {
-    posts: allCosmicjsPosts {
+  query Home ($page: Int) {
+    allBlogPost(page: $page) {
       edges {
         node {
-          id
-          slug
           title
-          metadata {
-            hero {
-              imgix_url
-            }
-            headline
-            content
-            description
-            publish_date
-          }
+          date (format: "MM DD YYYY")
+          spoiler
+          path
         }
       }
-    } 
+    }
   }
 </page-query>
 
@@ -46,7 +38,7 @@ export default {
     PostCard
   },
   metaInfo: {
-    title: "Home"
+    title: "Nate Lentz - natelentz.dev"
   },
   data() {
     return {
