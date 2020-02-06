@@ -1,10 +1,10 @@
 <template>
     <nav id="nav" role="navigation">
-        <div class="logo">
-            <!-- <router-link>LOGO</router-link> -->
-        </div>
-        <div class="nav-item" v-for="item in navItems" :key="item.id">
-            <router-link activeClass="active" :to="item.route">{{ item.title }}</router-link>
+        <g-image class="logo" src="~/assets/image/NL_LOGO_2020.png" width="200" alt="Nate Lentz logo" />
+        <div class="nav-items">
+          <div class="nav-item" v-for="item in navItems" :key="item.id">
+              <router-link activeClass="active" :to="item.route">{{ item.title }}</router-link>
+          </div>
         </div>
         <!-- <ToggleTheme /> -->
     </nav>
@@ -32,15 +32,29 @@ export default {
   left: 0;
   display: flex;
   flex-direction: row;
-  justify-content: flex-end;
+  align-items: center;
+  justify-content: space-between;
   background-color: #fff;
   border-bottom: 1px solid #e8e8e9;
 
-  .nav-item {
+
+  .nav-items {
     font-size: 24px;
     font-weight: bold;
     font-family: poppins;
-    padding: 15px 15px;
+    display: flex;
+
+    .nav-item {
+      padding: 15px 15px;
+    }
+  }
+
+  .logo {
+    display: flex;
+    justify-content: flex-start;
+    height: 50px;
+    width: 50px;
+    padding-left: 15px;
   }
 }
 </style>

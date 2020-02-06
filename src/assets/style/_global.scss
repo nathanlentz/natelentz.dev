@@ -35,6 +35,21 @@ body {
   text-align: center;
 }
 
+h1 {
+  font-weight: bold;
+  font-size: 54px;
+  font-family: "poppins";
+
+  @media(max-width: 450px) {
+    font-size: 44px;
+  }
+}
+
+p {
+  font-weight: bold;
+  font-family: "poppins";
+}
+
 a {
   text-decoration: none;
   position: relative;

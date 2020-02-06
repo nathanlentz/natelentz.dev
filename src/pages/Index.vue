@@ -1,7 +1,7 @@
 <template>
   <Layout>
     <Hero class="home-hero" :title="heroTitle" :desc="heroDescription" />
-    <div class="title-label">Recent Posts</div>
+    <div class="title-label" v-if="$page.allBlogPost.edges.length > 0">Recent Posts</div>
     <div v-for="{ node } in $page.allBlogPost.edges" :key="node.path">
       <PostCard 
         :title="node.title"
@@ -15,7 +15,7 @@
 
 <page-query>
   query Home ($page: Int) {
-    allBlogPost(page: $page) {
+    allBlogPost(perPage: 3, page: $page) {
       edges {
         node {
           title
@@ -38,7 +38,7 @@ export default {
     PostCard
   },
   metaInfo: {
-    title: "Nate Lentz - natelentz.dev"
+    title: "Home"
   },
   data() {
     return {

@@ -1,5 +1,5 @@
 <template>
-  <div class="Hero" :style="colors">
+  <div class="Hero" :style="styles">
     <div class="content">
       <h1>{{ title }}</h1>
       <p>{{ desc }}</p>
@@ -13,21 +13,24 @@ export default {
   props: {
     title: String,
     desc: String,
+    short: Boolean,
     bgColor: String,
     textColor: String,
     bgImage: String
   },
   computed: {
-    colors() {
-      return `background-color: ${this.bgColor}; color: ${this.textColor}`;
-    }
+    styles() {
+      return `
+        background-color: ${this.bgColor}; color: ${this.textColor}; 
+        height: ${this.short ? '250px' : '400px'}
+      `;
+    },
   }
 };
 </script>
 
 <style scoped lang="scss">
 .Hero {
-  height: 400px;
   padding: 0 10px;
   position: relative;
   @media screen and (max-width: 749px) {
@@ -35,7 +38,8 @@ export default {
   }
 }
 .Hero .content {
-  height: 100%;
+  height: 100%;   
+  padding: 0;
   position: relative;
   z-index: 5;
   margin: 0 auto;

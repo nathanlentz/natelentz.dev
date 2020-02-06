@@ -1,19 +1,50 @@
 <template>
   <Layout>
-    <Hero :title="$page.blogPost.title" :desc="$page.blogPost.spoiler" />
-    <div class="content" v-html="$page.blogPost.content" />
+    <Hero :title="$page.blogPost.title" :desc="$page.blogPost.spoiler" :short="true" />
+      <!-- <Author /> -->
+    <div class="date">Published: {{$page.blogPost.date}}</div>
+    <div class="tags">
+      <div v-for="tag in $page.blogPost.tags" :key="tag.id">
+        <PostTag :tag="tag" />
+      </div>
+    </div>
+    <article v-html="$page.blogPost.content"></article>
+    <a v-bind:href="`${editUrl}/${$page.blogPost.fileInfo.name}.md`">
+      Edit on Github
+    </a>
+
   </Layout>
 </template>
 
 <script>
 import Hero from "~/components/Hero.vue";
+import PostTag from '~/components/PostTag.vue';
+import Author from '~/components/Author.vue';
+
+const GITHUB_USERNAME = "nathanlentz";
+const GITHUB_REPO_NAME = "natelentz.dev";
 
 export default {
   components: {
-    Hero
+    Hero,
+    PostTag,
+    Author
   },
-  metaInfo: {
-    title: "butts"
+  data() {
+    return {
+      editUrl: `https://github.com/${GITHUB_USERNAME}/${GITHUB_REPO_NAME}/blob/master/blog`
+    }
+  },
+  metaInfo() {
+    return {
+      title: this.$page.blogPost.title,
+      meta: [
+        {
+          name: 'description',
+          content: this.$page.blogPost.spoiler
+        }
+      ]
+    }
   },
 }
 </script>
@@ -22,13 +53,32 @@ export default {
   query BlogPost ($path: String!){
     blogPost (path: $path) {
       title
-      date (format: "MM DD YYYY")
+      date (format: "MMMM DD YYYY")
       spoiler
       content
+      path
+      fileInfo {
+        name
+      }
+      tags {
+        id
+        title
+        path
+      }
     }
   }
 </page-query>
 
 <style scoped lang="scss">
+.date {
+  font-style: italic;
+}
 
+.tags {
+  display: flex;
+
+  .tag {
+    padding-right: 10px;
+  }
+}
 </style>

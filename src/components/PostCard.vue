@@ -1,6 +1,5 @@
 <template>
   <div class="post-card-wrapper">
-    <div class="new-tag" v-if="postIsNew">New!</div>
     <div class="post-card" >
       <div class="date">{{ publishDate }}</div>
       <div class="info">
@@ -29,7 +28,6 @@
     },
     computed: {
       postIsNew() {
-        // TODO: Compare publishedDate against. Maybe posts within last 5 days are "new"?
         return true;
       }
     }
@@ -51,13 +49,16 @@
 
   .title {
     font-size: 24px;
+
+    @media(max-width: 400px) {
+      font-size: 16px;
+    }
   }
 
   .new-tag {
     font-size: 14x;
     font-family: "poppins";
     font-weight: 700;
-    // color: $primary;
     padding: 5px;
     width: 50px;
     text-align: center;

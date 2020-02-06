@@ -11,7 +11,11 @@ function addStyleResource (rule) {
 }
 
 module.exports = {
-  siteName: 'Nate Lentz',
+  siteName: 'natelentz.dev',
+  templates: {
+    BlogPost: '/posts/:title',
+    Tag: '/posts/tag/:id'
+  },
   plugins: [
     {
       use: '@gridsome/source-filesystem',
@@ -20,6 +24,12 @@ module.exports = {
         typeName: 'BlogPost',
         pathPrefix: '/posts',
         path: '*.md',
+        refs: {
+          tags: {
+            typeName: 'Tag',
+            create: true
+          }
+        }
       }
     }
   ],
@@ -31,7 +41,7 @@ module.exports = {
       ]
     }
   },
-  
+
   chainWebpack (config) {
     // Load variables for all vue-files
     const types = ['vue-modules', 'vue', 'normal-modules', 'normal']

@@ -29,17 +29,6 @@ export default {
 </script>
 
 <style lang="scss">
-#app {
-  h1 {
-    font-weight: bold;
-    font-size: 54px;
-    font-family: "poppins";
-  }
-  p {
-    font-family: "poppins";
-    font-weight: bold;
-  }
-}
 </style>
 
 <static-query>
