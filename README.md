@@ -1,14 +1,5 @@
-# Default starter for Gridsome
+# [natelentz.dev](https://www.natelentz.dev)
 
-This is the project you get when you run `gridsome create new-project`.
+My personal blog written with [Gridsome](https://gridsome.org/). Syntax theme based on [One Monokai](https://marketplace.visualstudio.com/items?itemName=azemoh.one-monokai). Inspired by [overreacted.io](https://github.com/gaearon/overreacted.io).
 
-### 1. Install Gridsome CLI tool if you don't have
-
-`npm install --global @gridsome/cli`
-
-### 2. Create a Gridsome project
-
-1. `gridsome create my-gridsome-site` to install default starter
-2. `cd my-gridsome-site` to open the folder
-3. `gridsome develop` to start a local dev server at `http://localhost:8080`
-4. Happy coding 🎉🙌
+To run locally,`npm install`, then `gridsome develop`. 

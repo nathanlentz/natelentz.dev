@@ -1,13 +1,14 @@
 <template>
   <Layout>
-    <Hero :title="heroTitle" :desc="heroDescription" />
+    <Hero :title="heroTitle" :desc="heroDescription" :short="true" />
+    <p v-if="$page.allBlogPost.edges.length > 0">There is nothing here. 🎐 Come back later and I might have written something by then :)</p>
     <div v-for="{ node } in $page.allBlogPost.edges" :key="node.path">
-    <PostCard 
-      :title="node.title"
-      :description="node.spoiler"
-      :slug="node.path"
-      :publishDate="node.date"
-    />
+      <PostCard 
+        :title="node.title"
+        :description="node.spoiler"
+        :slug="node.path"
+        :publishDate="node.date"
+      />
     </div>
   </Layout>
 </template>
@@ -24,9 +25,15 @@
     data() {
       return {
         heroTitle: "All Blogs",
-        heroDescription: "Sometimes I have things to share."
+        heroDescription: "Tips, tricks, and my opinions."
+      }
+    },
+    metaInfo() {
+      return {
+        title: "Blog Index"
       }
     }
+  
   }
 </script>
 
