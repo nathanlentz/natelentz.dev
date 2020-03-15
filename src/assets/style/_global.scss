@@ -39,15 +39,21 @@ h1 {
   font-weight: bold;
   font-size: 54px;
   font-family: "poppins";
+  line-height: 65px;
 
-  @media(max-width: 450px) {
-    font-size: 44px;
+  @media(max-width: 690px) {
+    font-size: 36px;
+    line-height: 50px;
   }
 }
 
 p {
   font-weight: bold;
   font-family: "poppins";
+}
+
+article p {
+  font-weight: normal;
 }
 
 a {
