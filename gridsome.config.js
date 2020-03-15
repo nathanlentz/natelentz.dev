@@ -12,6 +12,7 @@ function addStyleResource (rule) {
 
 module.exports = {
   siteName: 'natelentz.dev',
+  siteUrl: 'https://www.natelentz.dev',
   templates: {
     BlogPost: '/posts/:title',
     Tag: '/posts/tag/:id'
@@ -28,16 +29,33 @@ module.exports = {
           tags: {
             typeName: 'Tag',
             create: true
-          }
-        }
-      }
+          },
+        },
+      },
     },
     {
       use: '@gridsome/plugin-google-analytics',
       options: {
         id: 'UA-78676024-2'
-      }
-    }
+      },
+    },
+    {
+      use: '@gridsome/plugin-sitemap',
+      options: {
+        cacheTime: 600000,
+        exclude: ['/posts/test-test-1-2-3/'],
+        config: {
+          '/': {
+            changefreq: 'weekly',
+            priority: .8,
+          },
+          '/posts': {
+            changefreq: 'weekly',
+            priority: .5
+          },
+        },
+      },
+    },
   ],
 
   transformers: {
@@ -45,7 +63,7 @@ module.exports = {
       plugins: [
         '@gridsome/remark-prismjs'
       ]
-    }
+    },
   },
 
   chainWebpack (config) {
@@ -57,5 +75,4 @@ module.exports = {
       addStyleResource(config.module.rule('scss').oneOf(type))
     })
   }
-  
 }
