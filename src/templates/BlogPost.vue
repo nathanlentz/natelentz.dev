@@ -8,11 +8,10 @@
         <PostTag :tag="tag" />
       </div>
     </div>
-    <article v-html="$page.blogPost.content"></article>
+    <article class="blog-content" v-html="$page.blogPost.content"></article>
     <a v-bind:href="`${editUrl}/${$page.blogPost.fileInfo.name}.md`">
       Edit on Github
     </a>
-
   </Layout>
 </template>
 
@@ -76,6 +75,7 @@ export default {
 
 .tags {
   display: flex;
+  color: pink;
 
   .tag {
     padding-right: 10px;

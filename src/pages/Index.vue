@@ -3,7 +3,8 @@
     <Hero class="home-hero" :title="heroTitle" :desc="heroDescription" />
     <div class="title-label" v-if="$page.allBlogPost.edges.length > 0">Recent Posts</div>
     <div v-for="{ node } in $page.allBlogPost.edges" :key="node.path">
-      <PostCard 
+      <PostCard
+        v-if="node.published"
         :title="node.title"
         :description="node.spoiler"
         :slug="node.path"
@@ -22,6 +23,7 @@
           date (format: "MM DD YYYY")
           spoiler
           path
+          published
         }
       }
     }
@@ -38,7 +40,14 @@ export default {
     PostCard
   },
   metaInfo: {
-    title: "Home"
+    title: "A blog by Nate Lentz",
+    meta: [
+        {
+          key: "description",
+          name: "description",
+          content: "Personal blog by Nate Lentz."
+        }
+    ]
   },
   data() {
     return {

@@ -1,9 +1,10 @@
 <template>
   <Layout>
     <Hero :title="heroTitle" :desc="heroDescription" :short="true" />
-    <p v-if="$page.allBlogPost.edges.length > 0">There is nothing here. 🎐 Come back later and I might have written something by then :)</p>
+    <p v-if="$page.allBlogPost.edges.length < 1">There is nothing here. 🎐 Come back later and I might have written something by then :)</p>
     <div v-for="{ node } in $page.allBlogPost.edges" :key="node.path">
       <PostCard 
+        v-if="node.published"
         :title="node.title"
         :description="node.spoiler"
         :slug="node.path"
@@ -30,7 +31,7 @@
     },
     metaInfo() {
       return {
-        title: "Blog Index"
+        title: "Writing"
       }
     }
   
@@ -46,6 +47,7 @@
           date (format: "MM DD YYYY")
           spoiler
           path
+          published
         }
       }
     }

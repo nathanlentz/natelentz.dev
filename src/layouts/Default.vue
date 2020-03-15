@@ -35,6 +35,7 @@ export default {
 query {
   metadata {
     siteName
+    siteDescription
   }
 }
 </static-query>

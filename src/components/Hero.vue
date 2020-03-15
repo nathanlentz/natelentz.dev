@@ -56,7 +56,6 @@ export default {
 h1 {
   margin-top: 0;
   margin-bottom: 10px;
-  line-height: 50px;
 }
 p {
   margin: 0;
