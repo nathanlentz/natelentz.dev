@@ -1,7 +1,10 @@
 <template>
   <Layout>
-    <Hero class="home-hero" :title="heroTitle" :desc="heroDescription" />
-    <div class="title-label" v-if="$page.allBlogPost.edges.length > 0">Recent Posts</div>
+    <HomeHero class="home-hero" :title="heroTitle" :desc="heroDescription" />
+    <!-- <PicksOfTheWeek /> -->
+    <div class="title-label" v-if="$page.allBlogPost.edges.length > 0">
+      Recent Posts
+    </div>
     <div v-for="{ node } in $page.allBlogPost.edges" :key="node.path">
       <PostCard
         v-if="node.published"
@@ -31,30 +34,32 @@
 </page-query>
 
 <script>
-import Hero from "~/components/Hero.vue";
+import HomeHero from "~/components/HomeHero.vue";
 import PostCard from "~/components/PostCard.vue";
+import PicksOfTheWeek from "~/components/PicksOfTheWeek.vue";
 
 export default {
   components: {
-    Hero,
-    PostCard
+    HomeHero,
+    PostCard,
+    PicksOfTheWeek,
   },
   metaInfo: {
     title: "A blog by Nate Lentz",
     meta: [
-        {
-          key: "description",
-          name: "description",
-          content: "Personal blog by Nate Lentz."
-        }
-    ]
+      {
+        key: "description",
+        name: "description",
+        content: "A personal blog by Nate Lentz.",
+      },
+    ],
   },
   data() {
     return {
       heroTitle: "Hi, I'm Nate.",
-      heroDescription: "I'm a developer from Grand Rapids, MI."
-    }
-  }
+      heroDescription: "I'm a developer from Grand Rapids, MI.",
+    };
+  },
 };
 </script>
 

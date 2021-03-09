@@ -16,16 +16,16 @@ export default {
     short: Boolean,
     bgColor: String,
     textColor: String,
-    bgImage: String
+    bgImage: String,
   },
   computed: {
     styles() {
       return `
         background-color: ${this.bgColor}; color: ${this.textColor}; 
-        height: ${this.short ? '250px' : '400px'}
+        height: ${this.short ? "250px" : "400px"}
       `;
     },
-  }
+  },
 };
 </script>
 
@@ -38,7 +38,7 @@ export default {
   }
 }
 .Hero .content {
-  height: 100%;   
+  height: 100%;
   padding: 0;
   position: relative;
   z-index: 5;
