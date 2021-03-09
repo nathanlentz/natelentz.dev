@@ -1,6 +1,8 @@
 <template>
     <nav id="nav" role="navigation">
-        <g-image class="logo" src="~/assets/image/NL_LOGO_2020.png" width="200" alt="Nate Lentz logo" />
+        <router-link :to="'/'" class="home-link">
+          <g-image class="logo" src="~/assets/image/NL_LOGO_2020.png" width="200" alt="Nate Lentz logo" />        
+        </router-link>
         <div class="nav-items">
           <div class="nav-item" v-for="item in navItems" :key="item.id">
               <router-link activeClass="active" :to="item.route">{{ item.title }}</router-link>
@@ -37,6 +39,9 @@ export default {
   background-color: #fff;
   border-bottom: 1px solid #e8e8e9;
 
+  a.home-link:after {
+    content: normal;
+  }
 
   .nav-items {
     font-size: 24px;
