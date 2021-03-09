@@ -30,7 +30,7 @@ export default {
     styles() {
       return `
         background-color: ${this.bgColor}; color: ${this.textColor};
-        height: ${this.short ? "250px" : "400px"}
+        height: ${this.short ? "250px" : "350px"}
       `;
     },
   },
@@ -73,7 +73,8 @@ export default {
 
 h1 {
   margin-top: 0;
-  margin-bottom: 10px;
+  margin-bottom: 0;
+  line-height: 4rem;
 }
 p {
   margin: 0;

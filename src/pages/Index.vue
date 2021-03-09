@@ -1,7 +1,12 @@
 <template>
   <Layout>
-    <HomeHero class="home-hero" :title="heroTitle" :desc="heroDescription" />
-    <!-- <PicksOfTheWeek /> -->
+    <HomeHero
+      class="home-hero"
+      :title="heroTitle"
+      :desc="heroDescription"
+      :short="true"
+    />
+    <PicksOfTheWeek />
     <div class="title-label" v-if="$page.allBlogPost.edges.length > 0">
       Recent Posts
     </div>
