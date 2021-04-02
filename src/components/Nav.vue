@@ -1,12 +1,13 @@
 <template>
   <nav id="nav" role="navigation">
     <router-link :to="'/'" class="home-link">
-      <g-image
+      <div class="circle" />
+      <!-- <g-image
         class="logo"
         src="~/assets/image/italy.jpg"
         width="200"
         alt="Nate Lentz logo"
-      />
+      /> -->
     </router-link>
     <div class="nav-items">
       <div class="nav-item" v-for="item in navItems" :key="item.id">
@@ -61,7 +62,8 @@ export default {
     }
   }
 
-  .logo {
+  .logo,
+  .circle {
     display: flex;
     justify-content: flex-start;
     height: 50px;
@@ -69,5 +71,14 @@ export default {
     margin-left: 15px;
     border-radius: 50%;
   }
+
+  .circle {
+    background-color: var(--accent);
+  }
+
+  .circle:hover {
+    opacity: 0.8;
+  }
 }
 </style>
+ 

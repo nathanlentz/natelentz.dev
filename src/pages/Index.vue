@@ -6,7 +6,7 @@
       :desc="heroDescription"
       :short="true"
     />
-    <PicksOfTheWeek />
+    <!-- <PicksOfTheWeek /> -->
     <div class="title-label" v-if="$page.allBlogPost.edges.length > 0">
       Recent Posts
     </div>

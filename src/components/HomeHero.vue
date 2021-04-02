@@ -3,8 +3,13 @@
     <div class="content">
       <h1>{{ title }}</h1>
       <p>{{ desc }}</p>
-      <div class="season-animation">
-        <Winter />
+      <div class="media">
+        <g-image
+          src="~/assets/image/italy.jpg"
+          alt="Nate Lentz"
+          class="avatar"
+        />
+        <!-- <Winter /> -->
       </div>
     </div>
   </div>
@@ -61,13 +66,23 @@ export default {
     }
   }
 }
-.season-animation {
+.media {
   position: absolute;
   right: 10px;
 
   @media screen and (max-width: 749px) {
     top: 30px;
     right: calc(50% - 50px);
+  }
+}
+.avatar {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+
+  @media screen and (max-width: 749px) {
+    width: 100px;
+    height: 100px;
   }
 }
 
