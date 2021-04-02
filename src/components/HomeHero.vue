@@ -1,8 +1,6 @@
 <template>
   <div class="Hero" :style="styles">
     <div class="content">
-      <h1>{{ title }}</h1>
-      <p>{{ desc }}</p>
       <div class="media">
         <g-image
           src="~/assets/image/italy.jpg"
@@ -11,6 +9,8 @@
         />
         <!-- <Winter /> -->
       </div>
+      <h1>{{ title }}</h1>
+      <p>{{ desc }}</p>
     </div>
   </div>
 </template>
@@ -71,8 +71,12 @@ export default {
   right: 10px;
 
   @media screen and (max-width: 749px) {
-    top: 30px;
-    right: calc(50% - 50px);
+    // top: 30px;
+    // right: calc(50% - 50px);
+    // margin: 0 auto;
+    margin: 0 auto 25px auto;
+    right: 0;
+    position: relative;
   }
 }
 .avatar {
@@ -90,6 +94,10 @@ h1 {
   margin-top: 0;
   margin-bottom: 0;
   line-height: 4rem;
+
+  @media screen and (max-width: 749px) {
+    line-height: 2rem;
+  }
 }
 p {
   margin: 0;
