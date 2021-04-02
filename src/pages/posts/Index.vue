@@ -1,9 +1,12 @@
 <template>
   <Layout>
     <Hero :title="heroTitle" :desc="heroDescription" :short="true" />
-    <p v-if="$page.allBlogPost.edges.length < 1">There is nothing here. 🎐 Come back later and I might have written something by then :)</p>
+    <p v-if="$page.allBlogPost.edges.length < 1">
+      There is nothing here. 🎐 Come back later and I might have written
+      something by then :)
+    </p>
     <div v-for="{ node } in $page.allBlogPost.edges" :key="node.path">
-      <PostCard 
+      <PostCard
         v-if="node.published"
         :title="node.title"
         :description="node.spoiler"
@@ -15,27 +18,26 @@
 </template>
 
 <script>
-  import Hero from '../../components/Hero';
-  import PostCard from '../../components/PostCard'
+import Hero from "~/components/Hero";
+import PostCard from "~/components/PostCard";
 
-  export default {
-    components: {
-      Hero,
-      PostCard
-    },
-    data() {
-      return {
-        heroTitle: "All Blogs",
-        heroDescription: "Tips, tricks, and my opinions."
-      }
-    },
-    metaInfo() {
-      return {
-        title: "Writing"
-      }
-    }
-  
-  }
+export default {
+  components: {
+    Hero,
+    PostCard,
+  },
+  data() {
+    return {
+      heroTitle: "All Blogs",
+      heroDescription: "Tips, tricks, and my opinions.",
+    };
+  },
+  metaInfo() {
+    return {
+      title: "Writing",
+    };
+  },
+};
 </script>
 
 <page-query>
@@ -54,6 +56,4 @@
   }
 </page-query>
 
-<style lang="scss" scoped>
-
-</style>
+<style lang="scss" scoped></style>

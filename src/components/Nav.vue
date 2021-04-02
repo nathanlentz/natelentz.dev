@@ -1,24 +1,34 @@
 <template>
-    <nav id="nav" role="navigation">
-        <g-image class="logo" src="~/assets/image/NL_LOGO_2020.png" width="200" alt="Nate Lentz logo" />
-        <div class="nav-items">
-          <div class="nav-item" v-for="item in navItems" :key="item.id">
-              <router-link activeClass="active" :to="item.route">{{ item.title }}</router-link>
-          </div>
-        </div>
-        <!-- <ToggleTheme /> -->
-    </nav>
+  <nav id="nav" role="navigation">
+    <router-link :to="'/'" class="home-link">
+      <div class="circle" />
+      <!-- <g-image
+        class="logo"
+        src="~/assets/image/italy.jpg"
+        width="200"
+        alt="Nate Lentz logo"
+      /> -->
+    </router-link>
+    <div class="nav-items">
+      <div class="nav-item" v-for="item in navItems" :key="item.id">
+        <router-link activeClass="active" :to="item.route">{{
+          item.title
+        }}</router-link>
+      </div>
+    </div>
+    <!-- <ToggleTheme /> -->
+  </nav>
 </template>
 
 <script>
-import ToggleTheme from '~/components/ToggleTheme.vue';
+import ToggleTheme from "~/components/ToggleTheme.vue";
 
 export default {
   components: {
-    ToggleTheme
+    ToggleTheme,
   },
-  name: 'Nav',
-  props: ["navItems"]
+  name: "Nav",
+  props: ["navItems"],
 };
 </script>
 
@@ -37,6 +47,9 @@ export default {
   background-color: #fff;
   border-bottom: 1px solid #e8e8e9;
 
+  a.home-link:after {
+    content: normal;
+  }
 
   .nav-items {
     font-size: 24px;
@@ -49,12 +62,23 @@ export default {
     }
   }
 
-  .logo {
+  .logo,
+  .circle {
     display: flex;
     justify-content: flex-start;
     height: 50px;
     width: 50px;
-    padding-left: 15px;
+    margin-left: 15px;
+    border-radius: 50%;
+  }
+
+  .circle {
+    background-color: var(--accent);
+  }
+
+  .circle:hover {
+    opacity: 0.8;
   }
 }
 </style>
+ 
