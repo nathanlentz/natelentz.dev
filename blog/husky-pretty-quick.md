@@ -1,10 +1,12 @@
 ---
-title: 'Pre-Commit Linting with Husky v5+ & Prettier'
+title: 'Pre-Commit Linting with Husky & Prettier'
 date: '2021-04-30'
 spoiler: 'Learn how to setup pre-commit linting using Prettier and newer versions of Husky'
 tags: ['tools']
 published: true
 ---
+
+_This tutorial specifically targets Husky versions 5 and 6._
 
 Pre-Commit hooks are a neat way to help keep code bases clean and avoid introducing unnecessary noise during the code review process. I commonly use pre commit hooks to run linting, tests, or check for other trivial things that need not be pointed out in Pull Requests leaving more time to focus on more important changes.
 
