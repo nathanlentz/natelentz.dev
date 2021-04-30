@@ -10,7 +10,7 @@
 
 <script>
 export default {
-  name: "PicksOfTheWeekItem",
+  name: 'PicksOfTheWeekItem',
   props: {
     title: String,
     type: String,
@@ -25,7 +25,7 @@ export default {
 
 <style lang="scss" scoped>
 .potw-item {
-  padding: 1px 0px;
+  padding: 5px 0px;
   display: flex;
   flex-direction: column;
   flex-basis: 33%;

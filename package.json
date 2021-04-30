@@ -4,7 +4,9 @@
   "scripts": {
     "build": "gridsome build",
     "dev": "gridsome develop",
-    "explore": "gridsome explore"
+    "explore": "gridsome explore",
+    "prepare": "husky install",
+    "pre-commit-checks": "pretty-quick --staged"
   },
   "dependencies": {
     "@gridsome/plugin-google-analytics": "^0.1.0",
@@ -18,7 +20,10 @@
     "typeface-poppins": "^0.0.72"
   },
   "devDependencies": {
+    "husky": "^6.0.0",
     "node-sass": "^4.13.1",
+    "prettier": "^2.2.1",
+    "pretty-quick": "^3.1.0",
     "sass-loader": "^8.0.2"
   }
 }

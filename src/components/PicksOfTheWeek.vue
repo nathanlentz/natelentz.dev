@@ -50,9 +50,7 @@
         />
       </svg>
     </div>
-    <p class="picks-date">
-      March Week 1 Picks (03/01 - 03/07)
-    </p>
+    <p class="picks-date">March Week 1 Picks (03/01 - 03/07)</p>
     <div class="picks">
       <PicksOfTheWeekItem
         :title="`Item 1`"
@@ -72,10 +70,10 @@
 </template>
 
 <script>
-import PicksOfTheWeekItem from "~/components/PicksOfTheWeekItem";
+import PicksOfTheWeekItem from '~/components/PicksOfTheWeekItem';
 
 export default {
-  name: "PicksOfTheWeek",
+  name: 'PicksOfTheWeek',
   components: {
     PicksOfTheWeekItem,
   },
